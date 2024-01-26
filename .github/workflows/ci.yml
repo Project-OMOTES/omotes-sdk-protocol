@@ -1,9 +1,9 @@
-name: Build-Test-Lint-etc (linux)
+name: Build (linux)
 
 on: [push]
 
 jobs:
-  build:
+  build-python:
     name: Build the python package
     runs-on: ubuntu-latest
     strategy:
