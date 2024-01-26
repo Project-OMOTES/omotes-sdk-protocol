@@ -3,6 +3,7 @@ name = "omotes_sdk_protocol_generation"
 dynamic = ["version"]
 authors = [{ name = "Sebastiaan la Fleur", email = "sebastiaan.lafleur@tno.nl" }]
 description = "Maintains and generates the OMOTES SDK protocol in various language."
+readme = "README.md"
 classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python :: 3",

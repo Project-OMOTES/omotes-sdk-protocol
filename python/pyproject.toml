@@ -3,6 +3,7 @@ name = "omotes_sdk_protocol"
 dynamic = ["version"]
 authors = [{ name = "Sebastiaan la Fleur", email = "sebastiaan.lafleur@tno.nl" }]
 description = "Python implementation of OMOTES SDK protocol through which jobs may be submitted and administered. Messages include checking on progress, cancelling a job and receiving status updates."
+readme = "README.md"
 classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python :: 3",
