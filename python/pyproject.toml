@@ -1,0 +1,45 @@
+[project]
+name = "omotes_sdk_protocol"
+dynamic = ["version"]
+authors = [{ name = "Sebastiaan la Fleur", email = "sebastiaan.lafleur@tno.nl" }]
+description = "Python implementation of OMOTES SDK protocol through which jobs may be submitted and administered. Messages include checking on progress, cancelling a job and receiving status updates."
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "protobuf ~= 4.25.2"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pip-tools ~= 7.3.0",
+    "build ~= 1.0.3",
+    "setuptools-git-versioning < 2"
+]
+
+[project.urls]
+homepage = "https://www.nwn.nu"
+documentation = "https://readthedocs.org"
+repository = "https://github.com/Project-OMOTES/omotes_sdk_protocol/"
+changelog = "https://github.com/Project-OMOTES/omotes_sdk_protocol/blob/main/CHANGELOG.md"
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools ~= 69.0.3", "wheel ~= 0.40.0", "setuptools-git-versioning<2"]
+
+[tools.setuptools]
+packages = ["src/omotes_sdk_protocol"]
+
+[tool.setuptools-git-versioning]
+enabled = true

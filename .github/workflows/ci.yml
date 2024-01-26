@@ -1,0 +1,25 @@
+name: Build-Test-Lint-etc (linux)
+
+on: [push]
+
+jobs:
+  build:
+    name: Build the python package
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.8", "3.11" ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      - run: |
+          ./python/ci/linux/create_venv.sh
+          ./python/ci/linux/install_dependencies.sh
+
+      - name: build
+        run: |
+          ./python/ci/linux/build_python_package.sh

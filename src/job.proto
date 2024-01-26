@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+message JobSubmission {
+  string uuid = 1;
+  optional uint32 timeout_ms = 2;
+  string workflow_type = 3;
+  bytes esdl = 4;
+
+}
+
+message JobResult {
+  string uuid = 1;
+  ResultType result_type = 2;
+
+  enum ResultType {
+    SUCCEEDED = 0;
+    TIMEOUT = 1;
+    ERROR = 2;
+  }
+}
+
+message JobProgressUpdate {
+  string uuid = 1;
+  double progress = 2;
+}
+
+message JobStatusUpdate {
+  string uuid = 1;
+
+  enum JobStatus {
+    REGISTERED = 0;
+    ENQUEUED = 1;
+    RUNNING = 2;
+    FINISHED = 3;
+  }
+}
+
+message JobCancel {
+  string uuid = 1;
+}
