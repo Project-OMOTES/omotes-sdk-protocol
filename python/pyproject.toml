@@ -1,5 +1,6 @@
 [project]
-name = "omotes_sdk_protocol"
+name = "omotes-sdk-protocol"
+requires-python = ">=3.8"
 dynamic = ["version"]
 authors = [{ name = "Sebastiaan la Fleur", email = "sebastiaan.lafleur@tno.nl" }]
 description = "Python implementation of OMOTES SDK protocol through which jobs may be submitted and administered. Messages include checking on progress, cancelling a job and receiving status updates."
@@ -26,7 +27,8 @@ dependencies = [
 dev = [
     "pip-tools ~= 7.3.0",
     "build ~= 1.0.3",
-    "setuptools-git-versioning < 2"
+    "setuptools-git-versioning < 2",
+    "setuptools ~= 69.0.3"
 ]
 
 [project.urls]
@@ -38,9 +40,6 @@ changelog = "https://github.com/Project-OMOTES/omotes_sdk_protocol/blob/main/CHA
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = ["setuptools ~= 69.0.3", "wheel ~= 0.40.0", "setuptools-git-versioning<2"]
-
-[tools.setuptools]
-packages = ["src/omotes_sdk_protocol"]
 
 [tool.setuptools-git-versioning]
 enabled = true

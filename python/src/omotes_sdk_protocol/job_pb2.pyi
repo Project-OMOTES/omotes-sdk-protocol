@@ -61,17 +61,53 @@ class JobResult(google.protobuf.message.Message):
     TIMEOUT: JobResult.ResultType.ValueType  # 1
     ERROR: JobResult.ResultType.ValueType  # 2
 
+    @typing_extensions.final
+    class Succes(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        OUTPUT_ESDL_FIELD_NUMBER: builtins.int
+        output_esdl: builtins.bytes
+        def __init__(
+            self,
+            *,
+            output_esdl: builtins.bytes = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["output_esdl", b"output_esdl"]) -> None: ...
+
+    @typing_extensions.final
+    class Error(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LOGS_FIELD_NUMBER: builtins.int
+        logs: builtins.str
+        def __init__(
+            self,
+            *,
+            logs: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["logs", b"logs"]) -> None: ...
+
     UUID_FIELD_NUMBER: builtins.int
     RESULT_TYPE_FIELD_NUMBER: builtins.int
+    ERROR_FIELD_NUMBER: builtins.int
+    SUCCESS_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     result_type: global___JobResult.ResultType.ValueType
+    @property
+    def error(self) -> global___JobResult.Error: ...
+    @property
+    def success(self) -> global___JobResult.Succes: ...
     def __init__(
         self,
         *,
         uuid: builtins.str = ...,
         result_type: global___JobResult.ResultType.ValueType = ...,
+        error: global___JobResult.Error | None = ...,
+        success: global___JobResult.Succes | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["result_type", b"result_type", "uuid", b"uuid"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["error", b"error", "result", b"result", "success", b"success"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["error", b"error", "result", b"result", "result_type", b"result_type", "success", b"success", "uuid", b"uuid"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["result", b"result"]) -> typing_extensions.Literal["error", "success"] | None: ...
 
 global___JobResult = JobResult
 
