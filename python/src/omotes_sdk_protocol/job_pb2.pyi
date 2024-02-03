@@ -117,15 +117,18 @@ class JobProgressUpdate(google.protobuf.message.Message):
 
     UUID_FIELD_NUMBER: builtins.int
     PROGRESS_FIELD_NUMBER: builtins.int
+    MESSAGE_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     progress: builtins.float
+    message: builtins.str
     def __init__(
         self,
         *,
         uuid: builtins.str = ...,
         progress: builtins.float = ...,
+        message: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["progress", b"progress", "uuid", b"uuid"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message", "progress", b"progress", "uuid", b"uuid"]) -> None: ...
 
 global___JobProgressUpdate = JobProgressUpdate
 
@@ -143,12 +146,14 @@ class JobStatusUpdate(google.protobuf.message.Message):
         ENQUEUED: JobStatusUpdate._JobStatus.ValueType  # 1
         RUNNING: JobStatusUpdate._JobStatus.ValueType  # 2
         FINISHED: JobStatusUpdate._JobStatus.ValueType  # 3
+        CANCELLED: JobStatusUpdate._JobStatus.ValueType  # 4
 
     class JobStatus(_JobStatus, metaclass=_JobStatusEnumTypeWrapper): ...
     REGISTERED: JobStatusUpdate.JobStatus.ValueType  # 0
     ENQUEUED: JobStatusUpdate.JobStatus.ValueType  # 1
     RUNNING: JobStatusUpdate.JobStatus.ValueType  # 2
     FINISHED: JobStatusUpdate.JobStatus.ValueType  # 3
+    CANCELLED: JobStatusUpdate.JobStatus.ValueType  # 4
 
     UUID_FIELD_NUMBER: builtins.int
     uuid: builtins.str

@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tjob.proto\"j\n\rJobSubmission\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\ntimeout_ms\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x15\n\rworkflow_type\x18\x03 \x01(\t\x12\x0c\n\x04\x65sdl\x18\x04 \x01(\x0c\x42\r\n\x0b_timeout_ms\"\x83\x02\n\tJobResult\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12*\n\x0bresult_type\x18\x02 \x01(\x0e\x32\x15.JobResult.ResultType\x12!\n\x05\x65rror\x18\x03 \x01(\x0b\x32\x10.JobResult.ErrorH\x00\x12$\n\x07success\x18\x04 \x01(\x0b\x32\x11.JobResult.SuccesH\x00\x1a\x1d\n\x06Succes\x12\x13\n\x0boutput_esdl\x18\x01 \x01(\x0c\x1a\x15\n\x05\x45rror\x12\x0c\n\x04logs\x18\x01 \x01(\t\"3\n\nResultType\x12\r\n\tSUCCEEDED\x10\x00\x12\x0b\n\x07TIMEOUT\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x42\x08\n\x06result\"3\n\x11JobProgressUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x01\"e\n\x0fJobStatusUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"D\n\tJobStatus\x12\x0e\n\nREGISTERED\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03\"\x19\n\tJobCancel\x12\x0c\n\x04uuid\x18\x01 \x01(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tjob.proto\"j\n\rJobSubmission\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\ntimeout_ms\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x15\n\rworkflow_type\x18\x03 \x01(\t\x12\x0c\n\x04\x65sdl\x18\x04 \x01(\x0c\x42\r\n\x0b_timeout_ms\"\x83\x02\n\tJobResult\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12*\n\x0bresult_type\x18\x02 \x01(\x0e\x32\x15.JobResult.ResultType\x12!\n\x05\x65rror\x18\x03 \x01(\x0b\x32\x10.JobResult.ErrorH\x00\x12$\n\x07success\x18\x04 \x01(\x0b\x32\x11.JobResult.SuccesH\x00\x1a\x1d\n\x06Succes\x12\x13\n\x0boutput_esdl\x18\x01 \x01(\x0c\x1a\x15\n\x05\x45rror\x12\x0c\n\x04logs\x18\x01 \x01(\t\"3\n\nResultType\x12\r\n\tSUCCEEDED\x10\x00\x12\x0b\n\x07TIMEOUT\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x42\x08\n\x06result\"D\n\x11JobProgressUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x01\x12\x0f\n\x07message\x18\x03 \x01(\t\"t\n\x0fJobStatusUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"S\n\tJobStatus\x12\x0e\n\nREGISTERED\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03\x12\r\n\tCANCELLED\x10\x04\"\x19\n\tJobCancel\x12\x0c\n\x04uuid\x18\x01 \x01(\tb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,11 +32,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_JOBRESULT_RESULTTYPE']._serialized_start=320
   _globals['_JOBRESULT_RESULTTYPE']._serialized_end=371
   _globals['_JOBPROGRESSUPDATE']._serialized_start=383
-  _globals['_JOBPROGRESSUPDATE']._serialized_end=434
-  _globals['_JOBSTATUSUPDATE']._serialized_start=436
-  _globals['_JOBSTATUSUPDATE']._serialized_end=537
-  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_start=469
-  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_end=537
-  _globals['_JOBCANCEL']._serialized_start=539
-  _globals['_JOBCANCEL']._serialized_end=564
+  _globals['_JOBPROGRESSUPDATE']._serialized_end=451
+  _globals['_JOBSTATUSUPDATE']._serialized_start=453
+  _globals['_JOBSTATUSUPDATE']._serialized_end=569
+  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_start=486
+  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_end=569
+  _globals['_JOBCANCEL']._serialized_start=571
+  _globals['_JOBCANCEL']._serialized_end=596
 # @@protoc_insertion_point(module_scope)
