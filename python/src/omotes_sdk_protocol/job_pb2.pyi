@@ -61,53 +61,25 @@ class JobResult(google.protobuf.message.Message):
     TIMEOUT: JobResult.ResultType.ValueType  # 1
     ERROR: JobResult.ResultType.ValueType  # 2
 
-    @typing_extensions.final
-    class Succes(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        OUTPUT_ESDL_FIELD_NUMBER: builtins.int
-        output_esdl: builtins.bytes
-        def __init__(
-            self,
-            *,
-            output_esdl: builtins.bytes = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["output_esdl", b"output_esdl"]) -> None: ...
-
-    @typing_extensions.final
-    class Error(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        LOGS_FIELD_NUMBER: builtins.int
-        logs: builtins.str
-        def __init__(
-            self,
-            *,
-            logs: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["logs", b"logs"]) -> None: ...
-
     UUID_FIELD_NUMBER: builtins.int
     RESULT_TYPE_FIELD_NUMBER: builtins.int
-    ERROR_FIELD_NUMBER: builtins.int
-    SUCCESS_FIELD_NUMBER: builtins.int
+    OUTPUT_ESDL_FIELD_NUMBER: builtins.int
+    LOGS_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     result_type: global___JobResult.ResultType.ValueType
-    @property
-    def error(self) -> global___JobResult.Error: ...
-    @property
-    def success(self) -> global___JobResult.Succes: ...
+    output_esdl: builtins.bytes
+    logs: builtins.str
     def __init__(
         self,
         *,
         uuid: builtins.str = ...,
         result_type: global___JobResult.ResultType.ValueType = ...,
-        error: global___JobResult.Error | None = ...,
-        success: global___JobResult.Succes | None = ...,
+        output_esdl: builtins.bytes | None = ...,
+        logs: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["error", b"error", "result", b"result", "success", b"success"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["error", b"error", "result", b"result", "result_type", b"result_type", "success", b"success", "uuid", b"uuid"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["result", b"result"]) -> typing_extensions.Literal["error", "success"] | None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "output_esdl", b"output_esdl"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "logs", b"logs", "output_esdl", b"output_esdl", "result_type", b"result_type", "uuid", b"uuid"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_output_esdl", b"_output_esdl"]) -> typing_extensions.Literal["output_esdl"] | None: ...
 
 global___JobResult = JobResult
 
@@ -156,13 +128,16 @@ class JobStatusUpdate(google.protobuf.message.Message):
     CANCELLED: JobStatusUpdate.JobStatus.ValueType  # 4
 
     UUID_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
     uuid: builtins.str
+    status: global___JobStatusUpdate.JobStatus.ValueType
     def __init__(
         self,
         *,
         uuid: builtins.str = ...,
+        status: global___JobStatusUpdate.JobStatus.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["uuid", b"uuid"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["status", b"status", "uuid", b"uuid"]) -> None: ...
 
 global___JobStatusUpdate = JobStatusUpdate
 
