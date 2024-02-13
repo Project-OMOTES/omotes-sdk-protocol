@@ -1,6 +1,9 @@
 #!/bin/bash
 
-. .venv/bin/activate
+if [[ "$OSTYPE" != "win32" && "$OSTYPE" != "msys" ]]; then
+  . .venv/bin/activate
+fi
+
 rm -Rf python/src/omotes_sdk_protocol/
 mkdir -p python/src/omotes_sdk_protocol/
 protoc -I src/ --python_out python/src/omotes_sdk_protocol/ ./src/job.proto

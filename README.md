@@ -6,7 +6,8 @@ Orchestrator component of OMOTES project which monitors workflows and starts the
 
 
 # Developers Guide
-Please install `protoc` on your machine and make sure it is available in your `PATH`.
+Please install `protoc` on your machine and make sure it is available in your `PATH`.  
+Version 25.2 is used: https://github.com/protocolbuffers/protobuf/releases.
 
 The protobuf definition is under `src/` and any language specific generated code resides under the language
 folder. For instance, the Python implementation resides under `python/`. The same holds for any packaging

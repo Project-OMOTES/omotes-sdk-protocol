@@ -10,19 +10,8 @@ message JobSubmission {
 message JobResult {
   string uuid = 1;
   ResultType result_type = 2;
-
-  message Succes {
-    bytes output_esdl = 1;
-  }
-
-  message Error {
-    string logs = 1;
-  }
-
-  oneof result {
-    Error error = 3;
-    Succes success = 4;
-  }
+  optional bytes output_esdl = 3;
+  string logs = 4;
 
   enum ResultType {
     SUCCEEDED = 0;
@@ -39,6 +28,7 @@ message JobProgressUpdate {
 
 message JobStatusUpdate {
   string uuid = 1;
+  JobStatus status = 2;
 
   enum JobStatus {
     REGISTERED = 0;
