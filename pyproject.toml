@@ -1,7 +1,10 @@
 [project]
 name = "omotes_sdk_protocol_generation"
 dynamic = ["version"]
-authors = [{ name = "Sebastiaan la Fleur", email = "sebastiaan.lafleur@tno.nl" }]
+authors = [
+    { name = "Sebastiaan la Fleur", email = "sebastiaan.lafleur@tno.nl" },
+    { name = "Mark Vrijlandt", email = "mark.vrijlandt@tno.nl" },
+]
 description = "Maintains and generates the OMOTES SDK protocol in various language."
 readme = "README.md"
 classifiers = [
