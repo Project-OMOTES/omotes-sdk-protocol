@@ -27,14 +27,15 @@ class JobSubmission(google.protobuf.message.Message):
     uuid: builtins.str
     timeout_ms: builtins.int
     workflow_type: builtins.str
-    esdl: builtins.bytes
+    esdl: builtins.str
+    """Raw XML string"""
     def __init__(
         self,
         *,
         uuid: builtins.str = ...,
         timeout_ms: builtins.int | None = ...,
         workflow_type: builtins.str = ...,
-        esdl: builtins.bytes = ...,
+        esdl: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "esdl", b"esdl", "timeout_ms", b"timeout_ms", "uuid", b"uuid", "workflow_type", b"workflow_type"]) -> None: ...
@@ -67,14 +68,15 @@ class JobResult(google.protobuf.message.Message):
     LOGS_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     result_type: global___JobResult.ResultType.ValueType
-    output_esdl: builtins.bytes
+    output_esdl: builtins.str
+    """Raw XML string"""
     logs: builtins.str
     def __init__(
         self,
         *,
         uuid: builtins.str = ...,
         result_type: global___JobResult.ResultType.ValueType = ...,
-        output_esdl: builtins.bytes | None = ...,
+        output_esdl: builtins.str | None = ...,
         logs: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "output_esdl", b"output_esdl"]) -> builtins.bool: ...
