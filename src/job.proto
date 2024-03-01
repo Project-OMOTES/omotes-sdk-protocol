@@ -1,10 +1,12 @@
 syntax = "proto3";
+import "google/protobuf/struct.proto";
 
 message JobSubmission {
   string uuid = 1;
   optional uint32 timeout_ms = 2;
   string workflow_type = 3;
   string esdl = 4; // Raw XML string
+  google.protobuf.Struct params_dict = 5;
 }
 
 message JobResult {
