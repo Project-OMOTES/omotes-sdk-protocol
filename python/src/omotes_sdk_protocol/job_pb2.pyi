@@ -6,6 +6,7 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.struct_pb2
 import sys
 import typing
 
@@ -24,11 +25,14 @@ class JobSubmission(google.protobuf.message.Message):
     TIMEOUT_MS_FIELD_NUMBER: builtins.int
     WORKFLOW_TYPE_FIELD_NUMBER: builtins.int
     ESDL_FIELD_NUMBER: builtins.int
+    PARAMS_DICT_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     timeout_ms: builtins.int
     workflow_type: builtins.str
     esdl: builtins.str
     """Raw XML string"""
+    @property
+    def params_dict(self) -> google.protobuf.struct_pb2.Struct: ...
     def __init__(
         self,
         *,
@@ -36,9 +40,10 @@ class JobSubmission(google.protobuf.message.Message):
         timeout_ms: builtins.int | None = ...,
         workflow_type: builtins.str = ...,
         esdl: builtins.str = ...,
+        params_dict: google.protobuf.struct_pb2.Struct | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "esdl", b"esdl", "timeout_ms", b"timeout_ms", "uuid", b"uuid", "workflow_type", b"workflow_type"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "esdl", b"esdl", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms", "uuid", b"uuid", "workflow_type", b"workflow_type"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_timeout_ms", b"_timeout_ms"]) -> typing_extensions.Literal["timeout_ms"] | None: ...
 
 global___JobSubmission = JobSubmission
