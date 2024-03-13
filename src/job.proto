@@ -19,6 +19,7 @@ message JobResult {
     SUCCEEDED = 0;
     TIMEOUT = 1;
     ERROR = 2;
+    CANCELLED = 3;
   }
 }
 

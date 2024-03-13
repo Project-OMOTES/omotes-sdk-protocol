@@ -61,11 +61,13 @@ class JobResult(google.protobuf.message.Message):
         SUCCEEDED: JobResult._ResultType.ValueType  # 0
         TIMEOUT: JobResult._ResultType.ValueType  # 1
         ERROR: JobResult._ResultType.ValueType  # 2
+        CANCELLED: JobResult._ResultType.ValueType  # 3
 
     class ResultType(_ResultType, metaclass=_ResultTypeEnumTypeWrapper): ...
     SUCCEEDED: JobResult.ResultType.ValueType  # 0
     TIMEOUT: JobResult.ResultType.ValueType  # 1
     ERROR: JobResult.ResultType.ValueType  # 2
+    CANCELLED: JobResult.ResultType.ValueType  # 3
 
     UUID_FIELD_NUMBER: builtins.int
     RESULT_TYPE_FIELD_NUMBER: builtins.int
