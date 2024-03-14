@@ -34,6 +34,7 @@ jobs:
         with:
           node-version: "20.x"
           cache: "npm"
+          cache-dependency-path: "./typescript/package-lock.json"
       - name: Build TypeScript artifacts
         run: |
           npm ci
