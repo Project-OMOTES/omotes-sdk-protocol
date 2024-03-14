@@ -28,3 +28,7 @@ A number of tools are available to create the Python package:
 - `./python/ci/linux/update_dependencies.sh`: Updates the build and package dependencies.
 - `./python/ci/linux/build_python_package.sh`: Generates the python package containing the python generated protobuf
   messages.
+
+# TypeScript-specific implementation Developers Guide
+To build the TypeScript artifacts, navigate to `/typescript` and run `npm run build`. Versioning is done automatically
+through the corresponding GitHub action (see [node_release.yml](./.github/workflows/node_release.yml)).

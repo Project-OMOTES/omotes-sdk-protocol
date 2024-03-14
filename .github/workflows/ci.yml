@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.8", "3.11" ]
+        python-version: ["3.8", "3.11"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-          cache: 'pip'
+          cache: "pip"
       - run: |
           ./python/ci/linux/create_venv.sh
           ./python/ci/linux/install_dependencies.sh
@@ -23,3 +23,22 @@ jobs:
       - name: build
         run: |
           ./python/ci/linux/build_python_package.sh
+  build-typescript:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./typescript
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: "npm"
+          cache-dependency-path: "./typescript/package-lock.json"
+      - uses: arduino/setup-protoc@v3
+        with:
+          version: "25.2"
+      - name: Build TypeScript artifacts
+        run: |
+          npm ci
+          npm run build
