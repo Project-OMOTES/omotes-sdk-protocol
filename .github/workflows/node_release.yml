@@ -1,0 +1,25 @@
+name: NPM Publish
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+          cache: "npm"
+      - name: Build and publish to NPM
+        working-directory: ./typescript
+        run: |
+          npm ci
+          npm run set-version --version="${{ github.ref_name }}"
+          npm run build
+          npm publish --public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
