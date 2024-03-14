@@ -25,6 +25,9 @@ jobs:
           ./python/ci/linux/build_python_package.sh
   build-typescript:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./typescript
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,7 +35,6 @@ jobs:
           node-version: "20.x"
           cache: "npm"
       - name: Build TypeScript artifacts
-        working-directory: ./typescript
         run: |
           npm ci
           npm run build
