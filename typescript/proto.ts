@@ -11,4 +11,11 @@ const options = [
 ];
 
 const script = `protoc ${options.join(' ')}`;
-exec(script);
+exec(script, (err, stdout, stderr) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  console.log('Successfully generated typescript files.');
+  process.exit(0);
+});
