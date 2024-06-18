@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message Parameter {
+  string name = 1;
+  ParameterType parameter_type = 2;
+
+  enum ParameterType {
+    STRING = 0;
+    INTEGER = 1;
+    DOUBLE = 2;
+    DATETIME = 3;
+  }
+}
+
+message WorkFlow {
+  string type_name = 1;
+  string type_description = 2;
+  repeated Parameter additional_parameters = 3;
+}
+
+message AvailableWorkFlows {
+  repeated WorkFlow work_flows = 1;
+}
+
+message RequestAvailableWorkflows {}
