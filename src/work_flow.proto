@@ -1,25 +1,29 @@
 syntax = "proto3";
 
-message Parameter {
-  string name = 1;
-  ParameterType parameter_type = 2;
-
-  enum ParameterType {
-    STRING = 0;
-    INTEGER = 1;
-    DOUBLE = 2;
-    DATETIME = 3;
-  }
+message WorkflowParameterSchema {
+  string type = 1;
+  string title =2;
+  optional string description = 3;
+  optional string default = 4;
+  optional string format = 5;
+  repeated string enum = 6;
+  optional double minimum = 7;
+  optional double maximum = 8;
 }
 
-message WorkFlow {
+message WorkflowParameter {
+  string key_name = 1;
+  WorkflowParameterSchema schema = 2;
+}
+
+message Workflow {
   string type_name = 1;
   string type_description = 2;
-  repeated Parameter additional_parameters = 3;
+  repeated WorkflowParameter parameters = 3;
 }
 
-message AvailableWorkFlows {
-  repeated WorkFlow work_flows = 1;
+message AvailableWorkflows {
+  repeated Workflow workflows = 1;
 }
 
 message RequestAvailableWorkflows {}

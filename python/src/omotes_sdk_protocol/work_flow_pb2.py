@@ -14,21 +14,21 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fwork_flow.proto\"\x8f\x01\n\tParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x30\n\x0eparameter_type\x18\x02 \x01(\x0e\x32\x18.Parameter.ParameterType\"B\n\rParameterType\x12\n\n\x06STRING\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\n\n\x06\x44OUBLE\x10\x02\x12\x0c\n\x08\x44\x41TETIME\x10\x03\"b\n\x08WorkFlow\x12\x11\n\ttype_name\x18\x01 \x01(\t\x12\x18\n\x10type_description\x18\x02 \x01(\t\x12)\n\x15\x61\x64\x64itional_parameters\x18\x03 \x03(\x0b\x32\n.Parameter\"3\n\x12\x41vailableWorkFlows\x12\x1d\n\nwork_flows\x18\x01 \x03(\x0b\x32\t.WorkFlow\"\x1b\n\x19RequestAvailableWorkflowsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fwork_flow.proto\"\xf4\x01\n\x17WorkflowParameterSchema\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x18\n\x0b\x64\x65scription\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x14\n\x07\x64\x65\x66\x61ult\x18\x04 \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06\x66ormat\x18\x05 \x01(\tH\x02\x88\x01\x01\x12\x0c\n\x04\x65num\x18\x06 \x03(\t\x12\x14\n\x07minimum\x18\x07 \x01(\x01H\x03\x88\x01\x01\x12\x14\n\x07maximum\x18\x08 \x01(\x01H\x04\x88\x01\x01\x42\x0e\n\x0c_descriptionB\n\n\x08_defaultB\t\n\x07_formatB\n\n\x08_minimumB\n\n\x08_maximum\"O\n\x11WorkflowParameter\x12\x10\n\x08key_name\x18\x01 \x01(\t\x12(\n\x06schema\x18\x02 \x01(\x0b\x32\x18.WorkflowParameterSchema\"_\n\x08Workflow\x12\x11\n\ttype_name\x18\x01 \x01(\t\x12\x18\n\x10type_description\x18\x02 \x01(\t\x12&\n\nparameters\x18\x03 \x03(\x0b\x32\x12.WorkflowParameter\"2\n\x12\x41vailableWorkflows\x12\x1c\n\tworkflows\x18\x01 \x03(\x0b\x32\t.Workflow\"\x1b\n\x19RequestAvailableWorkflowsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'work_flow_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
-  _globals['_PARAMETER']._serialized_start=20
-  _globals['_PARAMETER']._serialized_end=163
-  _globals['_PARAMETER_PARAMETERTYPE']._serialized_start=97
-  _globals['_PARAMETER_PARAMETERTYPE']._serialized_end=163
-  _globals['_WORKFLOW']._serialized_start=165
-  _globals['_WORKFLOW']._serialized_end=263
-  _globals['_AVAILABLEWORKFLOWS']._serialized_start=265
-  _globals['_AVAILABLEWORKFLOWS']._serialized_end=316
-  _globals['_REQUESTAVAILABLEWORKFLOWS']._serialized_start=318
-  _globals['_REQUESTAVAILABLEWORKFLOWS']._serialized_end=345
+  _globals['_WORKFLOWPARAMETERSCHEMA']._serialized_start=20
+  _globals['_WORKFLOWPARAMETERSCHEMA']._serialized_end=264
+  _globals['_WORKFLOWPARAMETER']._serialized_start=266
+  _globals['_WORKFLOWPARAMETER']._serialized_end=345
+  _globals['_WORKFLOW']._serialized_start=347
+  _globals['_WORKFLOW']._serialized_end=442
+  _globals['_AVAILABLEWORKFLOWS']._serialized_start=444
+  _globals['_AVAILABLEWORKFLOWS']._serialized_end=494
+  _globals['_REQUESTAVAILABLEWORKFLOWS']._serialized_start=496
+  _globals['_REQUESTAVAILABLEWORKFLOWS']._serialized_end=523
 # @@protoc_insertion_point(module_scope)

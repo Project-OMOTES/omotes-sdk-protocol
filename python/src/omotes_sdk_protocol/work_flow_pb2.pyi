@@ -6,12 +6,11 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
-import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
 import typing
 
-if sys.version_info >= (3, 10):
+if sys.version_info >= (3, 8):
     import typing as typing_extensions
 else:
     import typing_extensions
@@ -19,77 +18,110 @@ else:
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing_extensions.final
-class Parameter(google.protobuf.message.Message):
+class WorkflowParameterSchema(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    class _ParameterType:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _ParameterTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Parameter._ParameterType.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        STRING: Parameter._ParameterType.ValueType  # 0
-        INTEGER: Parameter._ParameterType.ValueType  # 1
-        DOUBLE: Parameter._ParameterType.ValueType  # 2
-        DATETIME: Parameter._ParameterType.ValueType  # 3
-
-    class ParameterType(_ParameterType, metaclass=_ParameterTypeEnumTypeWrapper): ...
-    STRING: Parameter.ParameterType.ValueType  # 0
-    INTEGER: Parameter.ParameterType.ValueType  # 1
-    DOUBLE: Parameter.ParameterType.ValueType  # 2
-    DATETIME: Parameter.ParameterType.ValueType  # 3
-
-    NAME_FIELD_NUMBER: builtins.int
-    PARAMETER_TYPE_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    parameter_type: global___Parameter.ParameterType.ValueType
+    TYPE_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    DEFAULT_FIELD_NUMBER: builtins.int
+    FORMAT_FIELD_NUMBER: builtins.int
+    ENUM_FIELD_NUMBER: builtins.int
+    MINIMUM_FIELD_NUMBER: builtins.int
+    MAXIMUM_FIELD_NUMBER: builtins.int
+    type: builtins.str
+    title: builtins.str
+    description: builtins.str
+    default: builtins.str
+    format: builtins.str
+    @property
+    def enum(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    minimum: builtins.float
+    maximum: builtins.float
     def __init__(
         self,
         *,
-        name: builtins.str = ...,
-        parameter_type: global___Parameter.ParameterType.ValueType = ...,
+        type: builtins.str = ...,
+        title: builtins.str = ...,
+        description: builtins.str | None = ...,
+        default: builtins.str | None = ...,
+        format: builtins.str | None = ...,
+        enum: collections.abc.Iterable[builtins.str] | None = ...,
+        minimum: builtins.float | None = ...,
+        maximum: builtins.float | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["name", b"name", "parameter_type", b"parameter_type"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_default", b"_default", "_description", b"_description", "_format", b"_format", "_maximum", b"_maximum", "_minimum", b"_minimum", "default", b"default", "description", b"description", "format", b"format", "maximum", b"maximum", "minimum", b"minimum"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_default", b"_default", "_description", b"_description", "_format", b"_format", "_maximum", b"_maximum", "_minimum", b"_minimum", "default", b"default", "description", b"description", "enum", b"enum", "format", b"format", "maximum", b"maximum", "minimum", b"minimum", "title", b"title", "type", b"type"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_default", b"_default"]) -> typing_extensions.Literal["default"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_description", b"_description"]) -> typing_extensions.Literal["description"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_format", b"_format"]) -> typing_extensions.Literal["format"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_maximum", b"_maximum"]) -> typing_extensions.Literal["maximum"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_minimum", b"_minimum"]) -> typing_extensions.Literal["minimum"] | None: ...
 
-global___Parameter = Parameter
+global___WorkflowParameterSchema = WorkflowParameterSchema
 
 @typing_extensions.final
-class WorkFlow(google.protobuf.message.Message):
+class WorkflowParameter(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    KEY_NAME_FIELD_NUMBER: builtins.int
+    SCHEMA_FIELD_NUMBER: builtins.int
+    key_name: builtins.str
+    @property
+    def schema(self) -> global___WorkflowParameterSchema: ...
+    def __init__(
+        self,
+        *,
+        key_name: builtins.str = ...,
+        schema: global___WorkflowParameterSchema | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["schema", b"schema"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key_name", b"key_name", "schema", b"schema"]) -> None: ...
+
+global___WorkflowParameter = WorkflowParameter
+
+@typing_extensions.final
+class Workflow(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TYPE_NAME_FIELD_NUMBER: builtins.int
     TYPE_DESCRIPTION_FIELD_NUMBER: builtins.int
-    ADDITIONAL_PARAMETERS_FIELD_NUMBER: builtins.int
+    PARAMETERS_FIELD_NUMBER: builtins.int
     type_name: builtins.str
     type_description: builtins.str
     @property
-    def additional_parameters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Parameter]: ...
+    def parameters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WorkflowParameter]: ...
     def __init__(
         self,
         *,
         type_name: builtins.str = ...,
         type_description: builtins.str = ...,
-        additional_parameters: collections.abc.Iterable[global___Parameter] | None = ...,
+        parameters: collections.abc.Iterable[global___WorkflowParameter] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["additional_parameters", b"additional_parameters", "type_description", b"type_description", "type_name", b"type_name"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["parameters", b"parameters", "type_description", b"type_description", "type_name", b"type_name"]) -> None: ...
 
-global___WorkFlow = WorkFlow
+global___Workflow = Workflow
 
 @typing_extensions.final
-class AvailableWorkFlows(google.protobuf.message.Message):
+class AvailableWorkflows(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    WORK_FLOWS_FIELD_NUMBER: builtins.int
+    WORKFLOWS_FIELD_NUMBER: builtins.int
     @property
-    def work_flows(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WorkFlow]: ...
+    def workflows(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Workflow]: ...
     def __init__(
         self,
         *,
-        work_flows: collections.abc.Iterable[global___WorkFlow] | None = ...,
+        workflows: collections.abc.Iterable[global___Workflow] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["work_flows", b"work_flows"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["workflows", b"workflows"]) -> None: ...
 
-global___AvailableWorkFlows = AvailableWorkFlows
+global___AvailableWorkflows = AvailableWorkflows
 
 @typing_extensions.final
 class RequestAvailableWorkflows(google.protobuf.message.Message):
