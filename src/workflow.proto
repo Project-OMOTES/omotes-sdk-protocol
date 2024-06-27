@@ -32,7 +32,7 @@ message DateTimeParameter {
 
 message WorkflowParameter {
   string key_name = 1;
-  string title = 2;
+  optional string title = 2;
   optional string description = 3;
   oneof parameter_type {
     StringParameter string_parameter = 4;
