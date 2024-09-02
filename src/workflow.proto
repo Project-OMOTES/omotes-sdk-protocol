@@ -30,6 +30,10 @@ message DateTimeParameter {
   optional string default = 1;
 }
 
+message DurationParameter {
+  optional string default = 1;
+}
+
 message WorkflowParameter {
   string key_name = 1;
   optional string title = 2;
@@ -40,6 +44,7 @@ message WorkflowParameter {
     IntegerParameter integer_parameter = 6;
     FloatParameter float_parameter = 7;
     DateTimeParameter datetime_parameter = 8;
+    DurationParameter duration_parameter = 9;
   }
 }
 

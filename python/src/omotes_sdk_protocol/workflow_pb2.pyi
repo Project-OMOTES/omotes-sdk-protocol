@@ -147,6 +147,23 @@ class DateTimeParameter(google.protobuf.message.Message):
 global___DateTimeParameter = DateTimeParameter
 
 @typing_extensions.final
+class DurationParameter(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DEFAULT_FIELD_NUMBER: builtins.int
+    default: builtins.str
+    def __init__(
+        self,
+        *,
+        default: builtins.str | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_default", b"_default", "default", b"default"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_default", b"_default", "default", b"default"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_default", b"_default"]) -> typing_extensions.Literal["default"] | None: ...
+
+global___DurationParameter = DurationParameter
+
+@typing_extensions.final
 class WorkflowParameter(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -158,6 +175,7 @@ class WorkflowParameter(google.protobuf.message.Message):
     INTEGER_PARAMETER_FIELD_NUMBER: builtins.int
     FLOAT_PARAMETER_FIELD_NUMBER: builtins.int
     DATETIME_PARAMETER_FIELD_NUMBER: builtins.int
+    DURATION_PARAMETER_FIELD_NUMBER: builtins.int
     key_name: builtins.str
     title: builtins.str
     description: builtins.str
@@ -171,6 +189,8 @@ class WorkflowParameter(google.protobuf.message.Message):
     def float_parameter(self) -> global___FloatParameter: ...
     @property
     def datetime_parameter(self) -> global___DateTimeParameter: ...
+    @property
+    def duration_parameter(self) -> global___DurationParameter: ...
     def __init__(
         self,
         *,
@@ -182,15 +202,16 @@ class WorkflowParameter(google.protobuf.message.Message):
         integer_parameter: global___IntegerParameter | None = ...,
         float_parameter: global___FloatParameter | None = ...,
         datetime_parameter: global___DateTimeParameter | None = ...,
+        duration_parameter: global___DurationParameter | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_description", b"_description", "_title", b"_title", "boolean_parameter", b"boolean_parameter", "datetime_parameter", b"datetime_parameter", "description", b"description", "float_parameter", b"float_parameter", "integer_parameter", b"integer_parameter", "parameter_type", b"parameter_type", "string_parameter", b"string_parameter", "title", b"title"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_description", b"_description", "_title", b"_title", "boolean_parameter", b"boolean_parameter", "datetime_parameter", b"datetime_parameter", "description", b"description", "float_parameter", b"float_parameter", "integer_parameter", b"integer_parameter", "key_name", b"key_name", "parameter_type", b"parameter_type", "string_parameter", b"string_parameter", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_description", b"_description", "_title", b"_title", "boolean_parameter", b"boolean_parameter", "datetime_parameter", b"datetime_parameter", "description", b"description", "duration_parameter", b"duration_parameter", "float_parameter", b"float_parameter", "integer_parameter", b"integer_parameter", "parameter_type", b"parameter_type", "string_parameter", b"string_parameter", "title", b"title"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_description", b"_description", "_title", b"_title", "boolean_parameter", b"boolean_parameter", "datetime_parameter", b"datetime_parameter", "description", b"description", "duration_parameter", b"duration_parameter", "float_parameter", b"float_parameter", "integer_parameter", b"integer_parameter", "key_name", b"key_name", "parameter_type", b"parameter_type", "string_parameter", b"string_parameter", "title", b"title"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_description", b"_description"]) -> typing_extensions.Literal["description"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_title", b"_title"]) -> typing_extensions.Literal["title"] | None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["parameter_type", b"parameter_type"]) -> typing_extensions.Literal["string_parameter", "boolean_parameter", "integer_parameter", "float_parameter", "datetime_parameter"] | None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["parameter_type", b"parameter_type"]) -> typing_extensions.Literal["string_parameter", "boolean_parameter", "integer_parameter", "float_parameter", "datetime_parameter", "duration_parameter"] | None: ...
 
 global___WorkflowParameter = WorkflowParameter
 
