@@ -31,7 +31,7 @@ message DateTimeParameter {
 }
 
 message DurationParameter {
-  optional string default = 1;
+  optional int64 default = 1;
 }
 
 message WorkflowParameter {

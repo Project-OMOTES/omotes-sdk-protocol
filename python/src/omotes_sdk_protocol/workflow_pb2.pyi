@@ -151,11 +151,11 @@ class DurationParameter(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DEFAULT_FIELD_NUMBER: builtins.int
-    default: builtins.str
+    default: builtins.int
     def __init__(
         self,
         *,
-        default: builtins.str | None = ...,
+        default: builtins.int | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["_default", b"_default", "default", b"default"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["_default", b"_default", "default", b"default"]) -> None: ...
