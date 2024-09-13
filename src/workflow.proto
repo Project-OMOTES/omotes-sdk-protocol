@@ -31,7 +31,10 @@ message DateTimeParameter {
 }
 
 message DurationParameter {
-  optional uint32 default = 1;
+  // optional uint32 default = 1; Replaced by default = 2
+  optional float default = 2;
+  optional float minimum = 3;
+  optional float maximum = 4;
 }
 
 message WorkflowParameter {

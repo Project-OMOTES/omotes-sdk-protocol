@@ -151,15 +151,27 @@ class DurationParameter(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DEFAULT_FIELD_NUMBER: builtins.int
-    default: builtins.int
+    MINIMUM_FIELD_NUMBER: builtins.int
+    MAXIMUM_FIELD_NUMBER: builtins.int
+    default: builtins.float
+    """optional uint32 default = 1; Replaced by default = 2"""
+    minimum: builtins.float
+    maximum: builtins.float
     def __init__(
         self,
         *,
-        default: builtins.int | None = ...,
+        default: builtins.float | None = ...,
+        minimum: builtins.float | None = ...,
+        maximum: builtins.float | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_default", b"_default", "default", b"default"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_default", b"_default", "default", b"default"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_default", b"_default", "_maximum", b"_maximum", "_minimum", b"_minimum", "default", b"default", "maximum", b"maximum", "minimum", b"minimum"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_default", b"_default", "_maximum", b"_maximum", "_minimum", b"_minimum", "default", b"default", "maximum", b"maximum", "minimum", b"minimum"]) -> None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_default", b"_default"]) -> typing_extensions.Literal["default"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_maximum", b"_maximum"]) -> typing_extensions.Literal["maximum"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_minimum", b"_minimum"]) -> typing_extensions.Literal["minimum"] | None: ...
 
 global___DurationParameter = DurationParameter
 
