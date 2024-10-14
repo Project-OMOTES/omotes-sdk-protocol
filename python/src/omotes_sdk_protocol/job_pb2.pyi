@@ -26,6 +26,7 @@ class JobSubmission(google.protobuf.message.Message):
     WORKFLOW_TYPE_FIELD_NUMBER: builtins.int
     ESDL_FIELD_NUMBER: builtins.int
     PARAMS_DICT_FIELD_NUMBER: builtins.int
+    JOB_REFERENCE_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     timeout_ms: builtins.int
     workflow_type: builtins.str
@@ -33,6 +34,7 @@ class JobSubmission(google.protobuf.message.Message):
     """Raw XML string"""
     @property
     def params_dict(self) -> google.protobuf.struct_pb2.Struct: ...
+    job_reference: builtins.str
     def __init__(
         self,
         *,
@@ -41,9 +43,13 @@ class JobSubmission(google.protobuf.message.Message):
         workflow_type: builtins.str = ...,
         esdl: builtins.str = ...,
         params_dict: google.protobuf.struct_pb2.Struct | None = ...,
+        job_reference: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_timeout_ms", b"_timeout_ms", "esdl", b"esdl", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms", "uuid", b"uuid", "workflow_type", b"workflow_type"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_job_reference", b"_job_reference", "_timeout_ms", b"_timeout_ms", "job_reference", b"job_reference", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_job_reference", b"_job_reference", "_timeout_ms", b"_timeout_ms", "esdl", b"esdl", "job_reference", b"job_reference", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms", "uuid", b"uuid", "workflow_type", b"workflow_type"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_job_reference", b"_job_reference"]) -> typing_extensions.Literal["job_reference"] | None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_timeout_ms", b"_timeout_ms"]) -> typing_extensions.Literal["timeout_ms"] | None: ...
 
 global___JobSubmission = JobSubmission
