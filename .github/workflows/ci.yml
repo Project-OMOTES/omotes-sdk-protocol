@@ -41,4 +41,4 @@ jobs:
       - name: Build TypeScript artifacts
         run: |
           npm ci
-          npm run build
+          npm run proto
