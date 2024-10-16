@@ -1,8 +1,8 @@
 name: NPM Publish
+run-name: Releasing next version on NPM 🚀
 on:
-  push:
-    tags:
-      - "*"
+  release:
+    types: [published]
 
 jobs:
   npm-publish:

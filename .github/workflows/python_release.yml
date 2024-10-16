@@ -1,9 +1,8 @@
 name: PyPi release
-run-name: Releasing next version 🚀
+run-name: Releasing next version on PyPI 🚀
 on:
-  push:
-    tags:
-      - '*'
+  release:
+    types: [published]
 
 jobs:
   pypi-publish:
