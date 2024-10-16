@@ -230,3 +230,5 @@ typescript/src/job_pb.d.ts
 typescript/src/job_pb.js
 typescript/src/workflow_pb.d.ts
 typescript/src/workflow_pb.js
+typescript/src/index.js
+typescript/src/index.d.ts
