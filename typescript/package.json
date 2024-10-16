@@ -1,8 +1,8 @@
 {
   "name": "@omotes/proto",
   "description": "Protobuf implementation for OMOTES jobs.",
-  "main": "./src/job_pb.js",
-  "typings": "./src/job_pb.d.ts",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
   "scripts": {
     "build": "./node_modules/.bin/ts-node ./proto.ts"
   },
