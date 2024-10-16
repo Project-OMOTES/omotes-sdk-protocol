@@ -1,11 +1,9 @@
 {
   "name": "@omotes/proto",
-  "version": "0.0.0",
   "description": "Protobuf implementation for OMOTES jobs.",
   "main": "./src/job_pb.js",
   "typings": "./src/job_pb.d.ts",
   "scripts": {
-    "set-version": "./node_modules/.bin/ts-node ./version.ts",
     "build": "./node_modules/.bin/ts-node ./proto.ts"
   },
   "repository": {
@@ -31,5 +29,6 @@
   },
   "dependencies": {
     "google-protobuf": "^3.21.2"
-  }
+  },
+  "version": "0.0.0"
 }
