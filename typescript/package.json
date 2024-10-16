@@ -4,7 +4,8 @@
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
   "scripts": {
-    "build": "./node_modules/.bin/ts-node ./proto.ts"
+    "proto": "./node_modules/.bin/ts-node ./proto.ts",
+    "tsc": "npx tsc -p ./tsconfig.json"
   },
   "repository": {
     "type": "git",
