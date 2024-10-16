@@ -225,3 +225,6 @@ unit_test_coverage/
 test-results.xml
 
 .env.*
+
+typescript/src/job_pb.d.ts
+typescript/src/job_pb.js

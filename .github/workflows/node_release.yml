@@ -25,8 +25,8 @@ jobs:
       - name: Build and publish to NPM
         run: |
           npm ci
-          npm run set-version --version="${{ github.ref_name }}"
           npm run build
+          npm version from-git
           npm publish --public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
