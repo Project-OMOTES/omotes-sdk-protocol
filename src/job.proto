@@ -15,12 +15,26 @@ message JobResult {
   ResultType result_type = 2;
   optional string output_esdl = 3; // Raw XML string
   string logs = 4;
+  repeated EsdlMessage esdl_messages = 5;
 
   enum ResultType {
     SUCCEEDED = 0;
     TIMEOUT = 1;
     ERROR = 2;
     CANCELLED = 3;
+  }
+}
+
+message EsdlMessage {
+  string technical_message = 1;
+  Severity severity = 2;
+  string esdl_object_id = 3; // can be omitted for general energy system messages
+
+  enum Severity {
+    DEBUG = 0;
+    INFO = 1;
+    WARNING = 2;
+    ERROR = 3;
   }
 }
 

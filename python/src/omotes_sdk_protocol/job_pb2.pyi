@@ -3,7 +3,9 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.struct_pb2
@@ -79,11 +81,14 @@ class JobResult(google.protobuf.message.Message):
     RESULT_TYPE_FIELD_NUMBER: builtins.int
     OUTPUT_ESDL_FIELD_NUMBER: builtins.int
     LOGS_FIELD_NUMBER: builtins.int
+    ESDL_MESSAGES_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     result_type: global___JobResult.ResultType.ValueType
     output_esdl: builtins.str
     """Raw XML string"""
     logs: builtins.str
+    @property
+    def esdl_messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EsdlMessage]: ...
     def __init__(
         self,
         *,
@@ -91,12 +96,52 @@ class JobResult(google.protobuf.message.Message):
         result_type: global___JobResult.ResultType.ValueType = ...,
         output_esdl: builtins.str | None = ...,
         logs: builtins.str = ...,
+        esdl_messages: collections.abc.Iterable[global___EsdlMessage] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "output_esdl", b"output_esdl"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "logs", b"logs", "output_esdl", b"output_esdl", "result_type", b"result_type", "uuid", b"uuid"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "esdl_messages", b"esdl_messages", "logs", b"logs", "output_esdl", b"output_esdl", "result_type", b"result_type", "uuid", b"uuid"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_output_esdl", b"_output_esdl"]) -> typing_extensions.Literal["output_esdl"] | None: ...
 
 global___JobResult = JobResult
+
+@typing_extensions.final
+class EsdlMessage(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Severity:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _SeverityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[EsdlMessage._Severity.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        DEBUG: EsdlMessage._Severity.ValueType  # 0
+        INFO: EsdlMessage._Severity.ValueType  # 1
+        WARNING: EsdlMessage._Severity.ValueType  # 2
+        ERROR: EsdlMessage._Severity.ValueType  # 3
+
+    class Severity(_Severity, metaclass=_SeverityEnumTypeWrapper): ...
+    DEBUG: EsdlMessage.Severity.ValueType  # 0
+    INFO: EsdlMessage.Severity.ValueType  # 1
+    WARNING: EsdlMessage.Severity.ValueType  # 2
+    ERROR: EsdlMessage.Severity.ValueType  # 3
+
+    TECHNICAL_MESSAGE_FIELD_NUMBER: builtins.int
+    SEVERITY_FIELD_NUMBER: builtins.int
+    ESDL_OBJECT_ID_FIELD_NUMBER: builtins.int
+    technical_message: builtins.str
+    severity: global___EsdlMessage.Severity.ValueType
+    esdl_object_id: builtins.str
+    """can be omitted for general energy system messages"""
+    def __init__(
+        self,
+        *,
+        technical_message: builtins.str = ...,
+        severity: global___EsdlMessage.Severity.ValueType = ...,
+        esdl_object_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["esdl_object_id", b"esdl_object_id", "severity", b"severity", "technical_message", b"technical_message"]) -> None: ...
+
+global___EsdlMessage = EsdlMessage
 
 @typing_extensions.final
 class JobProgressUpdate(google.protobuf.message.Message):
