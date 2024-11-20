@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "job.proto";
+import "omotes_sdk_protocol/job.proto";
 
 message TaskResult {
   string job_id = 1;

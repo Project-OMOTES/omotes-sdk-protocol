@@ -8,7 +8,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
-from .. import job_pb2
+import omotes_sdk_protocol.job_pb2
 import sys
 import typing
 
@@ -50,7 +50,7 @@ class TaskResult(google.protobuf.message.Message):
     output_esdl: builtins.str
     logs: builtins.str
     @property
-    def esdl_messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[job_pb2.EsdlMessage]: ...
+    def esdl_messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[omotes_sdk_protocol.job_pb2.EsdlMessage]: ...
     def __init__(
         self,
         *,
@@ -60,7 +60,7 @@ class TaskResult(google.protobuf.message.Message):
         result_type: global___TaskResult.ResultType.ValueType = ...,
         output_esdl: builtins.str | None = ...,
         logs: builtins.str = ...,
-        esdl_messages: collections.abc.Iterable[job_pb2.EsdlMessage] | None = ...,
+        esdl_messages: collections.abc.Iterable[omotes_sdk_protocol.job_pb2.EsdlMessage] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "output_esdl", b"output_esdl"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["_output_esdl", b"_output_esdl", "celery_task_id", b"celery_task_id", "celery_task_type", b"celery_task_type", "esdl_messages", b"esdl_messages", "job_id", b"job_id", "logs", b"logs", "output_esdl", b"output_esdl", "result_type", b"result_type"]) -> None: ...
