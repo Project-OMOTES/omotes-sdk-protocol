@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tjob.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xc6\x01\n\rJobSubmission\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\ntimeout_ms\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x15\n\rworkflow_type\x18\x03 \x01(\t\x12\x0c\n\x04\x65sdl\x18\x04 \x01(\t\x12,\n\x0bparams_dict\x18\x05 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1a\n\rjob_reference\x18\x06 \x01(\tH\x01\x88\x01\x01\x42\r\n\x0b_timeout_msB\x10\n\x0e_job_reference\"\xe6\x01\n\tJobResult\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12*\n\x0bresult_type\x18\x02 \x01(\x0e\x32\x15.JobResult.ResultType\x12\x18\n\x0boutput_esdl\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x0c\n\x04logs\x18\x04 \x01(\t\x12#\n\resdl_messages\x18\x05 \x03(\x0b\x32\x0c.EsdlMessage\"B\n\nResultType\x12\r\n\tSUCCEEDED\x10\x00\x12\x0b\n\x07TIMEOUT\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\r\n\tCANCELLED\x10\x03\x42\x0e\n\x0c_output_esdl\"\xa2\x01\n\x0b\x45sdlMessage\x12\x19\n\x11technical_message\x18\x01 \x01(\t\x12\'\n\x08severity\x18\x02 \x01(\x0e\x32\x15.EsdlMessage.Severity\x12\x16\n\x0e\x65sdl_object_id\x18\x03 \x01(\t\"7\n\x08Severity\x12\t\n\x05\x44\x45\x42UG\x10\x00\x12\x08\n\x04INFO\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\"D\n\x11JobProgressUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x01\x12\x0f\n\x07message\x18\x03 \x01(\t\"\xa0\x01\n\x0fJobStatusUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x01(\x0e\x32\x1a.JobStatusUpdate.JobStatus\"S\n\tJobStatus\x12\x0e\n\nREGISTERED\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03\x12\r\n\tCANCELLED\x10\x04\"\x19\n\tJobCancel\x12\x0c\n\x04uuid\x18\x01 \x01(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tjob.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xc6\x01\n\rJobSubmission\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\ntimeout_ms\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x15\n\rworkflow_type\x18\x03 \x01(\t\x12\x0c\n\x04\x65sdl\x18\x04 \x01(\t\x12,\n\x0bparams_dict\x18\x05 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1a\n\rjob_reference\x18\x06 \x01(\tH\x01\x88\x01\x01\x42\r\n\x0b_timeout_msB\x10\n\x0e_job_reference\"\xe6\x01\n\tJobResult\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12*\n\x0bresult_type\x18\x02 \x01(\x0e\x32\x15.JobResult.ResultType\x12\x18\n\x0boutput_esdl\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x0c\n\x04logs\x18\x04 \x01(\t\x12#\n\resdl_messages\x18\x05 \x03(\x0b\x32\x0c.EsdlMessage\"B\n\nResultType\x12\r\n\tSUCCEEDED\x10\x00\x12\x0b\n\x07TIMEOUT\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\r\n\tCANCELLED\x10\x03\x42\x0e\n\x0c_output_esdl\"\xba\x01\n\x0b\x45sdlMessage\x12\x19\n\x11technical_message\x18\x01 \x01(\t\x12\'\n\x08severity\x18\x02 \x01(\x0e\x32\x15.EsdlMessage.Severity\x12\x1b\n\x0e\x65sdl_object_id\x18\x03 \x01(\tH\x00\x88\x01\x01\"7\n\x08Severity\x12\t\n\x05\x44\x45\x42UG\x10\x00\x12\x08\n\x04INFO\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x42\x11\n\x0f_esdl_object_id\"D\n\x11JobProgressUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x01\x12\x0f\n\x07message\x18\x03 \x01(\t\"\xa0\x01\n\x0fJobStatusUpdate\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x01(\x0e\x32\x1a.JobStatusUpdate.JobStatus\"S\n\tJobStatus\x12\x0e\n\nREGISTERED\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03\x12\r\n\tCANCELLED\x10\x04\"\x19\n\tJobCancel\x12\x0c\n\x04uuid\x18\x01 \x01(\tb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,15 +29,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_JOBRESULT_RESULTTYPE']._serialized_start=393
   _globals['_JOBRESULT_RESULTTYPE']._serialized_end=459
   _globals['_ESDLMESSAGE']._serialized_start=478
-  _globals['_ESDLMESSAGE']._serialized_end=640
-  _globals['_ESDLMESSAGE_SEVERITY']._serialized_start=585
-  _globals['_ESDLMESSAGE_SEVERITY']._serialized_end=640
-  _globals['_JOBPROGRESSUPDATE']._serialized_start=642
-  _globals['_JOBPROGRESSUPDATE']._serialized_end=710
-  _globals['_JOBSTATUSUPDATE']._serialized_start=713
-  _globals['_JOBSTATUSUPDATE']._serialized_end=873
-  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_start=790
-  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_end=873
-  _globals['_JOBCANCEL']._serialized_start=875
-  _globals['_JOBCANCEL']._serialized_end=900
+  _globals['_ESDLMESSAGE']._serialized_end=664
+  _globals['_ESDLMESSAGE_SEVERITY']._serialized_start=590
+  _globals['_ESDLMESSAGE_SEVERITY']._serialized_end=645
+  _globals['_JOBPROGRESSUPDATE']._serialized_start=666
+  _globals['_JOBPROGRESSUPDATE']._serialized_end=734
+  _globals['_JOBSTATUSUPDATE']._serialized_start=737
+  _globals['_JOBSTATUSUPDATE']._serialized_end=897
+  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_start=814
+  _globals['_JOBSTATUSUPDATE_JOBSTATUS']._serialized_end=897
+  _globals['_JOBCANCEL']._serialized_start=899
+  _globals['_JOBCANCEL']._serialized_end=924
 # @@protoc_insertion_point(module_scope)

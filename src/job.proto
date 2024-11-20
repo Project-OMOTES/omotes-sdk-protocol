@@ -28,7 +28,7 @@ message JobResult {
 message EsdlMessage {
   string technical_message = 1;
   Severity severity = 2;
-  string esdl_object_id = 3; // can be omitted for general energy system messages
+  optional string esdl_object_id = 3; // can be omitted for general energy system messages
 
   enum Severity {
     DEBUG = 0;
