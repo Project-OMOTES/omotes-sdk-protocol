@@ -7,8 +7,9 @@ const options = [
   `--js_out="import_style=commonjs,binary:./src"`,
   `--ts_out="./src"`,
   `--proto_path="../src"`,
-  `job.proto`,
-  `workflow.proto`
+  'omotes_sdk_protocol/job.proto',
+  'omotes_sdk_protocol/workflow.proto',
+  'omotes_sdk_protocol/internal/task.proto'
 ];
 
 const script = `protoc ${options.join(' ')}`;
