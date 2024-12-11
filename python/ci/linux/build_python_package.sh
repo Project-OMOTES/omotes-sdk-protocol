@@ -1,5 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-. ./python/.venv/bin/activate
+if [[ "$OSTYPE" != "win32" && "$OSTYPE" != "msys" ]]; then
+  echo "Activating .venv first."
+  . ./python/.venv/bin/activate
+fi
 cd ./python/
 python -m build

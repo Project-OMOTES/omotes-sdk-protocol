@@ -1,6 +1,6 @@
 [project]
 name = "omotes-sdk-protocol"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dynamic = ["version"]
 authors = [
     { name = "Sebastiaan la Fleur", email = "sebastiaan.lafleur@tno.nl" },
@@ -23,15 +23,14 @@ classifiers = [
 ]
 
 dependencies = [
-    "protobuf ~= 4.25.2"
+    "protobuf ~= 5.29.1"
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pip-tools ~= 7.3.0",
-    "build ~= 1.0.3",
-    "setuptools-git-versioning < 2",
-    "setuptools ~= 69.0.3"
+    "build ~= 1.2.2",
+    "setuptools-git-versioning >= 2.0, < 3",
+    "setuptools ~= 75.6.0",
 ]
 
 [project.urls]
@@ -42,10 +41,15 @@ changelog = "https://github.com/Project-OMOTES/omotes_sdk_protocol/blob/main/CHA
 
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools ~= 69.0.3", "wheel ~= 0.40.0", "setuptools-git-versioning<2"]
+requires = [
+    "setuptools ~= 75.6.0",
+    "wheel ~= 0.45.1",
+    "setuptools-git-versioning >= 2.0, < 3",
+]
 
 [tool.setuptools.package-data]
 "omotes_sdk_protocol" = ["py.typed"]
 
 [tool.setuptools-git-versioning]
 enabled = true
+starting_version = "0.0.1"
