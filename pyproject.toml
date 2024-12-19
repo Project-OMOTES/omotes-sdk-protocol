@@ -26,10 +26,9 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pip-tools~=7.3.0",
     "mypy-protobuf ~= 3.5.0",
-    "build ~= 1.0.3",
-    "setuptools-git-versioning < 2"
+    "build ~= 1.2.2",
+    "setuptools-git-versioning >= 2.0, < 3"
 ]
 
 [project.urls]
@@ -40,7 +39,12 @@ changelog = "https://github.com/Project-OMOTES/omotes_sdk_protocol/blob/main/CHA
 
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools ~= 69.0.3", "wheel ~= 0.40.0", "setuptools-git-versioning<2"]
+requires = [
+    "setuptools ~= 75.6.0",
+    "wheel ~= 0.45.1",
+    "setuptools-git-versioning >= 2.0, < 3",
+]
 
 [tool.setuptools-git-versioning]
 enabled = true
+starting_version = "0.0.1"
