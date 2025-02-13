@@ -51,10 +51,25 @@ message WorkflowParameter {
   }
 }
 
+message ParameterRelation {
+  string key_1 = 1;
+  string key_2 = 2;
+  RelationType relation = 3;
+
+  enum RelationType {
+    GREATER = 0;
+    GREATER_OR_EQ = 1;
+    SMALLER = 2;
+    SMALLER_OR_EQ = 3;
+    EQ = 4;
+  }
+}
+
 message Workflow {
   string type_name = 1;
   string type_description = 2;
   repeated WorkflowParameter parameters = 3;
+  repeated ParameterRelation relations = 4;
 }
 
 message AvailableWorkflows {
