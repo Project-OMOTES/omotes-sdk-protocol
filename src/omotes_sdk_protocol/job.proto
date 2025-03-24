@@ -8,6 +8,13 @@ message JobSubmission {
   string esdl = 4; // Raw XML string
   google.protobuf.Struct params_dict = 5;
   optional string job_reference = 6;
+  optional JobPriority job_priority = 7;
+
+  enum JobPriority {
+    LOW = 0;
+    MEDIUM = 1;
+    HIGH = 2;
+  }
 }
 
 message JobResult {
