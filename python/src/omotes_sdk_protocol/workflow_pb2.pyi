@@ -203,17 +203,17 @@ class WorkflowParameter(google.protobuf.message.Message):
         SMALLER_OR_EQ: WorkflowParameter.Constraint.RelationType.ValueType  # 3
         EQ: WorkflowParameter.Constraint.RelationType.ValueType  # 4
 
-        OTHER_KEY_FIELD_NUMBER: builtins.int
+        OTHER_KEY_NAME_FIELD_NUMBER: builtins.int
         RELATION_FIELD_NUMBER: builtins.int
-        other_key: builtins.str
+        other_key_name: builtins.str
         relation: global___WorkflowParameter.Constraint.RelationType.ValueType
         def __init__(
             self,
             *,
-            other_key: builtins.str = ...,
+            other_key_name: builtins.str = ...,
             relation: global___WorkflowParameter.Constraint.RelationType.ValueType = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["other_key", b"other_key", "relation", b"relation"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["other_key_name", b"other_key_name", "relation", b"relation"]) -> None: ...
 
     KEY_NAME_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int

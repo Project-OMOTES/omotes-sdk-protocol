@@ -39,7 +39,7 @@ message DurationParameter {
 
 message WorkflowParameter {
     message Constraint {
-      string other_key = 1;
+      string other_key_name = 1;
       RelationType relation = 2;
 
       enum RelationType {
