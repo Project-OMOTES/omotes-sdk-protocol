@@ -180,6 +180,41 @@ global___DurationParameter = DurationParameter
 class WorkflowParameter(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
+    class Constraint(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _RelationType:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _RelationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WorkflowParameter.Constraint._RelationType.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            GREATER: WorkflowParameter.Constraint._RelationType.ValueType  # 0
+            GREATER_OR_EQ: WorkflowParameter.Constraint._RelationType.ValueType  # 1
+            SMALLER: WorkflowParameter.Constraint._RelationType.ValueType  # 2
+            SMALLER_OR_EQ: WorkflowParameter.Constraint._RelationType.ValueType  # 3
+            EQ: WorkflowParameter.Constraint._RelationType.ValueType  # 4
+
+        class RelationType(_RelationType, metaclass=_RelationTypeEnumTypeWrapper): ...
+        GREATER: WorkflowParameter.Constraint.RelationType.ValueType  # 0
+        GREATER_OR_EQ: WorkflowParameter.Constraint.RelationType.ValueType  # 1
+        SMALLER: WorkflowParameter.Constraint.RelationType.ValueType  # 2
+        SMALLER_OR_EQ: WorkflowParameter.Constraint.RelationType.ValueType  # 3
+        EQ: WorkflowParameter.Constraint.RelationType.ValueType  # 4
+
+        OTHER_KEY_FIELD_NUMBER: builtins.int
+        RELATION_FIELD_NUMBER: builtins.int
+        other_key: builtins.str
+        relation: global___WorkflowParameter.Constraint.RelationType.ValueType
+        def __init__(
+            self,
+            *,
+            other_key: builtins.str = ...,
+            relation: global___WorkflowParameter.Constraint.RelationType.ValueType = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["other_key", b"other_key", "relation", b"relation"]) -> None: ...
+
     KEY_NAME_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -189,6 +224,7 @@ class WorkflowParameter(google.protobuf.message.Message):
     FLOAT_PARAMETER_FIELD_NUMBER: builtins.int
     DATETIME_PARAMETER_FIELD_NUMBER: builtins.int
     DURATION_PARAMETER_FIELD_NUMBER: builtins.int
+    CONSTRAINTS_FIELD_NUMBER: builtins.int
     key_name: builtins.str
     title: builtins.str
     description: builtins.str
@@ -204,6 +240,8 @@ class WorkflowParameter(google.protobuf.message.Message):
     def datetime_parameter(self) -> global___DateTimeParameter: ...
     @property
     def duration_parameter(self) -> global___DurationParameter: ...
+    @property
+    def constraints(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WorkflowParameter.Constraint]: ...
     def __init__(
         self,
         *,
@@ -216,9 +254,10 @@ class WorkflowParameter(google.protobuf.message.Message):
         float_parameter: global___FloatParameter | None = ...,
         datetime_parameter: global___DateTimeParameter | None = ...,
         duration_parameter: global___DurationParameter | None = ...,
+        constraints: collections.abc.Iterable[global___WorkflowParameter.Constraint] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["_description", b"_description", "_title", b"_title", "boolean_parameter", b"boolean_parameter", "datetime_parameter", b"datetime_parameter", "description", b"description", "duration_parameter", b"duration_parameter", "float_parameter", b"float_parameter", "integer_parameter", b"integer_parameter", "parameter_type", b"parameter_type", "string_parameter", b"string_parameter", "title", b"title"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_description", b"_description", "_title", b"_title", "boolean_parameter", b"boolean_parameter", "datetime_parameter", b"datetime_parameter", "description", b"description", "duration_parameter", b"duration_parameter", "float_parameter", b"float_parameter", "integer_parameter", b"integer_parameter", "key_name", b"key_name", "parameter_type", b"parameter_type", "string_parameter", b"string_parameter", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_description", b"_description", "_title", b"_title", "boolean_parameter", b"boolean_parameter", "constraints", b"constraints", "datetime_parameter", b"datetime_parameter", "description", b"description", "duration_parameter", b"duration_parameter", "float_parameter", b"float_parameter", "integer_parameter", b"integer_parameter", "key_name", b"key_name", "parameter_type", b"parameter_type", "string_parameter", b"string_parameter", "title", b"title"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_description", b"_description"]) -> typing_extensions.Literal["description"] | None: ...
     @typing.overload
@@ -229,68 +268,24 @@ class WorkflowParameter(google.protobuf.message.Message):
 global___WorkflowParameter = WorkflowParameter
 
 @typing_extensions.final
-class ParameterRelation(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _RelationType:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _RelationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ParameterRelation._RelationType.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        GREATER: ParameterRelation._RelationType.ValueType  # 0
-        GREATER_OR_EQ: ParameterRelation._RelationType.ValueType  # 1
-        SMALLER: ParameterRelation._RelationType.ValueType  # 2
-        SMALLER_OR_EQ: ParameterRelation._RelationType.ValueType  # 3
-        EQ: ParameterRelation._RelationType.ValueType  # 4
-
-    class RelationType(_RelationType, metaclass=_RelationTypeEnumTypeWrapper): ...
-    GREATER: ParameterRelation.RelationType.ValueType  # 0
-    GREATER_OR_EQ: ParameterRelation.RelationType.ValueType  # 1
-    SMALLER: ParameterRelation.RelationType.ValueType  # 2
-    SMALLER_OR_EQ: ParameterRelation.RelationType.ValueType  # 3
-    EQ: ParameterRelation.RelationType.ValueType  # 4
-
-    KEY_1_FIELD_NUMBER: builtins.int
-    KEY_2_FIELD_NUMBER: builtins.int
-    RELATION_FIELD_NUMBER: builtins.int
-    key_1: builtins.str
-    key_2: builtins.str
-    relation: global___ParameterRelation.RelationType.ValueType
-    def __init__(
-        self,
-        *,
-        key_1: builtins.str = ...,
-        key_2: builtins.str = ...,
-        relation: global___ParameterRelation.RelationType.ValueType = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key_1", b"key_1", "key_2", b"key_2", "relation", b"relation"]) -> None: ...
-
-global___ParameterRelation = ParameterRelation
-
-@typing_extensions.final
 class Workflow(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TYPE_NAME_FIELD_NUMBER: builtins.int
     TYPE_DESCRIPTION_FIELD_NUMBER: builtins.int
     PARAMETERS_FIELD_NUMBER: builtins.int
-    RELATIONS_FIELD_NUMBER: builtins.int
     type_name: builtins.str
     type_description: builtins.str
     @property
     def parameters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WorkflowParameter]: ...
-    @property
-    def relations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ParameterRelation]: ...
     def __init__(
         self,
         *,
         type_name: builtins.str = ...,
         type_description: builtins.str = ...,
         parameters: collections.abc.Iterable[global___WorkflowParameter] | None = ...,
-        relations: collections.abc.Iterable[global___ParameterRelation] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["parameters", b"parameters", "relations", b"relations", "type_description", b"type_description", "type_name", b"type_name"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["parameters", b"parameters", "type_description", b"type_description", "type_name", b"type_name"]) -> None: ...
 
 global___Workflow = Workflow
 
