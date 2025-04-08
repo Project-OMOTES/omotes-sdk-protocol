@@ -1,5 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-. ./python/.venv/bin/activate
-pip-compile --output-file=./python/requirements.txt ./python/pyproject.toml
-pip-compile --extra=dev -c ./python/requirements.txt --output-file=./python/dev-requirements.txt ./python/pyproject.toml
+if [[ "$OSTYPE" != "win32" && "$OSTYPE" != "msys" ]]; then
+  echo "Activating .venv first."
+  . ./python/.venv/bin/activate
+fi
+
+pip-compile --upgrade --output-file=./python/requirements.txt ./python/pyproject.toml
+pip-compile --upgrade --extra=dev -c ./python/requirements.txt --output-file=./python/dev-requirements.txt ./python/pyproject.toml

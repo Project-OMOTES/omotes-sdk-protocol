@@ -57,6 +57,6 @@ message JobStatusUpdate {
   }
 }
 
-message JobCancel {
+message JobDelete {
   string uuid = 1;
 }

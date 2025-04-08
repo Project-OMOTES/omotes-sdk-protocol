@@ -4,31 +4,22 @@
 #
 #    pip-compile --constraint=requirements.txt --extra=dev --output-file=dev-requirements.txt pyproject.toml
 #
-build==1.0.3
-    # via
-    #   omotes_sdk_protocol_generation (pyproject.toml)
-    #   pip-tools
-click==8.1.7
-    # via pip-tools
+build==1.2.2.post1
+    # via omotes_sdk_protocol_generation (pyproject.toml)
 mypy-protobuf==3.5.0
     # via omotes_sdk_protocol_generation (pyproject.toml)
-packaging==23.2
+packaging==24.2
     # via
     #   build
     #   setuptools-git-versioning
-pip-tools==7.3.0
-    # via omotes_sdk_protocol_generation (pyproject.toml)
-protobuf==4.25.2
+protobuf==5.29.1
     # via mypy-protobuf
-pyproject-hooks==1.0.0
+pyproject-hooks==1.2.0
     # via build
-setuptools-git-versioning==1.13.5
+setuptools-git-versioning==2.0.0
     # via omotes_sdk_protocol_generation (pyproject.toml)
-types-protobuf==4.24.0.20240106
+types-protobuf==5.29.1.20241207
     # via mypy-protobuf
-wheel==0.42.0
-    # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
-# pip
 # setuptools

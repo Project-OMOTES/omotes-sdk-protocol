@@ -204,7 +204,7 @@ class JobStatusUpdate(google.protobuf.message.Message):
 global___JobStatusUpdate = JobStatusUpdate
 
 @typing_extensions.final
-class JobCancel(google.protobuf.message.Message):
+class JobDelete(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     UUID_FIELD_NUMBER: builtins.int
@@ -216,4 +216,4 @@ class JobCancel(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["uuid", b"uuid"]) -> None: ...
 
-global___JobCancel = JobCancel
+global___JobDelete = JobDelete
