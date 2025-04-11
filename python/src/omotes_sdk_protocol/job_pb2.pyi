@@ -23,12 +23,28 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 class JobSubmission(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _JobPriority:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _JobPriorityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[JobSubmission._JobPriority.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        LOW: JobSubmission._JobPriority.ValueType  # 0
+        MEDIUM: JobSubmission._JobPriority.ValueType  # 1
+        HIGH: JobSubmission._JobPriority.ValueType  # 2
+
+    class JobPriority(_JobPriority, metaclass=_JobPriorityEnumTypeWrapper): ...
+    LOW: JobSubmission.JobPriority.ValueType  # 0
+    MEDIUM: JobSubmission.JobPriority.ValueType  # 1
+    HIGH: JobSubmission.JobPriority.ValueType  # 2
+
     UUID_FIELD_NUMBER: builtins.int
     TIMEOUT_MS_FIELD_NUMBER: builtins.int
     WORKFLOW_TYPE_FIELD_NUMBER: builtins.int
     ESDL_FIELD_NUMBER: builtins.int
     PARAMS_DICT_FIELD_NUMBER: builtins.int
     JOB_REFERENCE_FIELD_NUMBER: builtins.int
+    JOB_PRIORITY_FIELD_NUMBER: builtins.int
     uuid: builtins.str
     timeout_ms: builtins.int
     workflow_type: builtins.str
@@ -37,6 +53,7 @@ class JobSubmission(google.protobuf.message.Message):
     @property
     def params_dict(self) -> google.protobuf.struct_pb2.Struct: ...
     job_reference: builtins.str
+    job_priority: global___JobSubmission.JobPriority.ValueType
     def __init__(
         self,
         *,
@@ -46,9 +63,12 @@ class JobSubmission(google.protobuf.message.Message):
         esdl: builtins.str = ...,
         params_dict: google.protobuf.struct_pb2.Struct | None = ...,
         job_reference: builtins.str | None = ...,
+        job_priority: global___JobSubmission.JobPriority.ValueType | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_job_reference", b"_job_reference", "_timeout_ms", b"_timeout_ms", "job_reference", b"job_reference", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_job_reference", b"_job_reference", "_timeout_ms", b"_timeout_ms", "esdl", b"esdl", "job_reference", b"job_reference", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms", "uuid", b"uuid", "workflow_type", b"workflow_type"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_job_priority", b"_job_priority", "_job_reference", b"_job_reference", "_timeout_ms", b"_timeout_ms", "job_priority", b"job_priority", "job_reference", b"job_reference", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_job_priority", b"_job_priority", "_job_reference", b"_job_reference", "_timeout_ms", b"_timeout_ms", "esdl", b"esdl", "job_priority", b"job_priority", "job_reference", b"job_reference", "params_dict", b"params_dict", "timeout_ms", b"timeout_ms", "uuid", b"uuid", "workflow_type", b"workflow_type"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_job_priority", b"_job_priority"]) -> typing_extensions.Literal["job_priority"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_job_reference", b"_job_reference"]) -> typing_extensions.Literal["job_reference"] | None: ...
     @typing.overload
